@@ -1,16 +1,16 @@
 #include "WPILib.h"
-#include "OI.h"
+#include "OperatorInterface.h"
 
 class Main: public IterativeRobot
 {
-	OI *oi;
+	OperatorInterface *oi;
 	Compressor *comp599;
 	
 	
 public:	
 	Main()
 	{
-		oi = new OI();
+		oi = new OperatorInterface();
 		oi->dashboard->PutString("Stage", "Main");
 		
 		comp599 = new Compressor(1, 1, 1, 1); 

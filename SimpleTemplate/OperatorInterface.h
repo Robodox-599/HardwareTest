@@ -1,5 +1,5 @@
-#ifndef OI_H
-#define OI_H
+#ifndef OPERATOR_INTERFACE_H
+#define OPERATOR_INTERFACE_H
 
 #include "WPILib.h"
 #include "SmartDashboard/SmartDashboard.h"
@@ -7,12 +7,12 @@
 #include "SmartDashboard/Sendable.h"
 #include "SmartDashboard/SendableChooser.h"
 
-class OI
+class OperatorInterface
 {
 	
 public:
-	OI();	
-	~OI();
+	OperatorInterface();	
+	~OperatorInterface();
 	
 	Joystick *getDriveJoystick();
 	bool getDriveJoystickButton(UINT8 button);
@@ -35,4 +35,3 @@ private:
 	DriverStation *dsSimple;
 };
 #endif
-	

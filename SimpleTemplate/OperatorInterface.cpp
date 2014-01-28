@@ -1,6 +1,6 @@
-#include "OI.h"
+#include "OperatorInterface.h"
 
-OI::OI()
+OperatorInterface::OperatorInterface()
 {
 	joyDrive = new Joystick(1);
 	joyManip = new Joystick(2);
@@ -11,7 +11,7 @@ OI::OI()
 }
 
 
-OI::~OI()
+OperatorInterface::~OperatorInterface()
 {
 	delete dsLCD;
 	delete joyDrive;
@@ -22,17 +22,17 @@ OI::~OI()
 	joyManip = NULL;	
 }
 
-Joystick *OI::getDriveJoystick()
+Joystick *OperatorInterface::getDriveJoystick()
 {
     return joyDrive;
 }
 
-Joystick *OI::getManipJoystick()
+Joystick *OperatorInterface::getManipJoystick()
 {
     return joyManip;
 }
 
-bool OI::getDriveJoystickButton(UINT8 button)
+bool OperatorInterface::getDriveJoystickButton(UINT8 button)
 {
 	 if(joyDrive->GetRawButton(button))
 	 {
@@ -44,7 +44,7 @@ bool OI::getDriveJoystickButton(UINT8 button)
 	 }
 }
 
-bool OI::getManipJoystickButton(UINT8 button)
+bool OperatorInterface::getManipJoystickButton(UINT8 button)
 {
 	if( joyManip->GetRawButton(button) == 1)
 	{
@@ -56,7 +56,7 @@ bool OI::getManipJoystickButton(UINT8 button)
 	}
 }
 
-float OI::getBatteryVoltage()
+float OperatorInterface::getBatteryVoltage()
 {
 	return DriverStation::GetInstance()->GetBatteryVoltage();
 }
